@@ -2,15 +2,49 @@
 
 ---
 
-### 1. 피그마로 마켓컬리 푸터 영역 SNS 아이콘을 컴포넌트화 구현
+### 1. 피그마 작업
 
-[푸터 영역 SNS 아이콘 피그마 링크]
+- 피그마 툴을 활용한 마켓컬리 푸터 영역 SNS 아이콘 컴포넌트 작업
+- type을 선택할 때마다 블로그, 인스타그램, 페이스북, 포스트, 유튜브 아이콘으 변경
+- [푸터 영역 SNS 아이콘 피그마 링크]
 
 [푸터 영역 SNS 아이콘 피그마 링크]: https://www.figma.com/design/U54Js6oapGKdjqeapo4jck/%EB%A7%88%EC%BC%93%EC%BB%AC%EB%A6%AC-%ED%91%B8%ED%84%B0-%EC%95%84%EC%9D%B4%EC%BD%98?node-id=0-1&t=yNjbt2uSczUJZbmJ-1
 
-### 2. SNS 아이콘 컴포넌트 생성 및 렌더링
+![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-01-figma.png?raw=true)
 
-```js
+### 2. 개발 환경 세팅
+
+- 자바스크립트 환경에서 구현됨을 알리는 `<noscript>` 추가
+- `jsx`로 작업할 예정 + jsx를 컴파일 해줄 도구로 `Babel` 선정
+- 컴포넌트를 뿌려줄(?) `<div id="react-app"></div>` 작성
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아토믹 컴포넌트 구현 실습</title>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+
+    <!-- @babel/standalone -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx" data-type="module" src="src/main.js"></script>
+  </head>
+
+  <body>
+    <noscript>이 앱을 사용하려면 JavaScript 활성화가 필요합니다.</noscript>
+    <div id="react-app"></div>
+  </body>
+</html>
+```
+
+### 3. SNS 아이콘 컴포넌트 생성 및 렌더링
+
+```jsx
 function SnsIcons({ type = "naver-blog", size = 30 }) {
   let iconPath = "";
   let typeMessage = "";
@@ -39,7 +73,6 @@ function SnsIcons({ type = "naver-blog", size = 30 }) {
       break;
   }
 
-  // JSX
   return (
     <a className="SnsIcons" href="#" aria-label={typeMessage}>
       <img src={iconPath} alt={name} width={size} height={size} />
@@ -48,7 +81,6 @@ function SnsIcons({ type = "naver-blog", size = 30 }) {
 }
 
 function FooterSnsIcons() {
-  // JSX
   return (
     <div class="footer__sns-list">
       <ul className="FooterSnsIcons">
@@ -81,6 +113,9 @@ if (container) {
 }
 ```
 
-> 🤔 환경구성하는 부분에서 시간이 상당히 오래 걸렸다. 아직 익숙하지 않은 듯.
+### 4. 구현된 결과 확인 및 웹표준 검사 체크
 
-> 🤔 과제 제출 시간이 다가와서 리드미 문서 작성할 시간이 부족하다. 제출 이후에 추가 수정할 예정..ㅠ
+![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-last.png?raw=true)
+![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-02-htmlcheck.png?raw=true)
+
+> 🤔 환경구성하는 부분에서 시간이 상당히 오래 걸렸다. 아직 익숙하지 않은 듯.
