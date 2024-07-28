@@ -1,0 +1,28 @@
+.footer__sns-list {
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+  }
+
+  a {
+    width: 30px;
+    inline-size: 30px;
+    height: 30px;
+    block-size: 30px;
+  }
+
+  img,
+  svg {
+    width: 30px;
+    inline-size: 30px;
+    height: 30px;
+    block-size: 30px;
+    transition: 0.2s;
+  }
+
+  img:hover,
+  svg:hover {
+    scale: 0.9;
+  }
+}
