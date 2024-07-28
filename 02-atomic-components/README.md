@@ -127,7 +127,7 @@ if (container) {
 ### 4. 구현된 결과 확인 및 웹표준 검사 체크
 
 ![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-last.png?raw=true)
-![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-03-browser?raw=true)
+![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-03-browser.png?raw=true)
 ![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/02-02-htmlcheck.png?raw=true)
 
 > 🤔 환경구성하는 부분에서 시간이 상당히 오래 걸렸다. 저번 과제는 그냥 학습 저장소에 같이 올렸었는데 이번에는 과제 저장소를 따로 만들어서 깃 레포를 추가했고, 라이브서버도 pnpm으로 설치해서 작업했다. 아직 익숙하지 않은 듯.
