@@ -16,7 +16,7 @@
 
   button{
     background:var(--grape-color);
-    color:var(--white);
+    color:var(--primary-color);
     border:0;
     border-radius:4px;
     padding:0.4em 0.8em;
