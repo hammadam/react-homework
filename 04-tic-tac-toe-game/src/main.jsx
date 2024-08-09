@@ -1,13 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Game from '@/tic-tac-toe/Game';
-import '@/styles/Board.css';
-import '@/styles/Game.css';
-import '@/styles/global.css';
-import '@/styles/History.css';
-import '@/styles/Square.css';
-import '@/styles/Squares.css';
-import '@/styles/Status.css';
 
 const container = document.getElementById('react-app');
 
