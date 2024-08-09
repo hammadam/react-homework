@@ -1,0 +1,11 @@
+.Board{
+  display:flex;
+  flex-flow:column;
+  align-items: center;
+  gap:12px;
+
+
+  .Gametitle{
+    font-size:80px;
+  }
+}

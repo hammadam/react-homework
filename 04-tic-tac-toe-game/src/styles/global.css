@@ -1,12 +1,31 @@
 :root {
   --white: #fff;
   --black: #000;
+  --bg-color:#27345f;
+  --primary-color: #1b1a19;
+  --secondary-color:#ffe093;
+  --grape-color:#f28e71;
+  --square-size: 80px;
 
   -round-xs: 2px;
 }
 
 body {
-  margin: 0;
-  background-color: var(--black);
-  color: var(--white);
+  margin: 40px;
+  background-color: var(--bg-color);
+  color: var(--secondary-color);
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+  font-weight:400;
+}
+
+button{
+  cursor:pointer;
+  line-height:1;
+}
+
+button:disabled{
+  cursor:not-allowed;
 }
