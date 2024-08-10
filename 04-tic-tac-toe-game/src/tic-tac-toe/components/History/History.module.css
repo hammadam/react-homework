@@ -1,4 +1,6 @@
-.History{
+.component{
+  display:flex;
+  justify-content: center;
   margin-top:38px;
   min-width:100px;
 

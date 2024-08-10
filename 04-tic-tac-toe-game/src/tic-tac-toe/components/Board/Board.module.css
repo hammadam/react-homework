@@ -1,11 +1,13 @@
-.Board{
+.component{
   display:flex;
   flex-flow:column;
   align-items: center;
   gap:12px;
 
-
-  .Gametitle{
-    font-size:80px;
+  h2{
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    font-size:60px;
+    border-bottom: 2px solid var(--secondary-color);
   }
 }
