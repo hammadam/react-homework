@@ -13,16 +13,11 @@ Status.propTypes = {
 
 
 function Status({winner, nextPlayer, isDraw = false}){
-  if(winner){
-    return <h3 className={S.component}>위너: 🍄</h3>;
-  }
+  let statusMessage = `다음 플레이어 : ${nextPlayer}`;
+  if (winner) statusMessage = `위너!! ${winner}`;
+  if (isDraw) statusMessage = '비겼어요! 한번더?';
 
-  if(isDraw){
-    return <h3 className={S.component}>비겼어요! 한번더?</h3>;
-  }
-
-  return <h3 className={S.component}>다음 플레이어 : {nextPlayer}</h3>;
-
+  return <h3 className={S.component}>{statusMessage}</h3>;
 }
 
 export default Status;
