@@ -3,7 +3,10 @@ export const PLAYER = {
   TWO: '🐤',
 };
 
+// 게임 플레이어 집합
+export const PLAYER_LIST = Object.values(PLAYER);
 
+// 게임 플레이어의 수
 export const PLAYER_COUNT = Object.keys(PLAYER).length;
 
 // 스퀘어 집합 : 초기 상태 값
@@ -20,7 +23,7 @@ const WINNER_CONDITIONS = [
   [0,3,6],
   [1,4,7],
   [2,5,8],
-  [1,4,8],
+  [0,4,8],
   [2,4,6],
 ]
 
