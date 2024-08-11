@@ -30,7 +30,7 @@
 - 게임 기록 버튼의 위치를 게임판 아래로 배치했다.
 - (기능적인 부분은 추가하지 못했다)
 
-![initial](https://github.com/hammadam/react-homework/blob/main/00-readme-Image/04-design02.png?raw=true)
+<img width="400px" alt="틱택토 게임 캡쳐" src="https://github.com/hammadam/react-homework/blob/main/00-readme-Image/04-design02.png?raw=true"/>
 
 
 
