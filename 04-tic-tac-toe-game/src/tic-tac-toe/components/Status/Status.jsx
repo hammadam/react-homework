@@ -13,7 +13,7 @@ Status.propTypes = {
 
 
 function Status({winner, nextPlayer, isDraw = false}){
-  let statusMessage = `다음 플레이어 : ${nextPlayer}`;
+  let statusMessage = `이번 턴 플레이어 : ${nextPlayer}`;
   if (winner) statusMessage = `위너!! ${winner}`;
   if (isDraw) statusMessage = '비겼어요! 한번더?';
 

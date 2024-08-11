@@ -28,10 +28,10 @@ function Game() {
     }
 
     // 다음 게임의 인덱스는?
-    const nextGemeIndex = gameIndex + 1;
+    const nextGameIndex = gameIndex + 1;
     
     //다음 게임 인덱스 상태 업데이트 요청
-    setGameIndex(nextGemeIndex);
+    setGameIndex(nextGameIndex);
 
     // 게임 히스토리에 기록 추가
 
@@ -43,10 +43,19 @@ function Game() {
       return idx === index ? nextPlayer : square;
     });
 
-    const nextGameHistory = [...gameHistory, nextSquares];
+    const nextGameHistory = [
+      ...gameHistory.slice(0, nextGameIndex),
+      nextSquares
+    ];
 
     setGameHistory(nextGameHistory);
   };
+
+
+  // 시간 여행 기능(함수)
+  const handleTimeTravel = (index) => {
+    setGameIndex(index);
+  }
 
   // ====== ⚫️🛑⚪️ === 게임 파생된 상태 === ⚪️🛑⚫️ ======
 
@@ -84,7 +93,11 @@ function Game() {
         onPlay={handlePlayGame}
         isDraw={isDraw}
       />
-      <History />
+      <History
+        onTimeTravel={handleTimeTravel}
+        gameHistory={gameHistory}
+        gameIndex={gameIndex}
+      />
     </div>
   );
 }
