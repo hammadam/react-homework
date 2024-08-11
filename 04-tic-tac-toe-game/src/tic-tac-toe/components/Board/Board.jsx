@@ -27,7 +27,7 @@ function Board(){
     // 아직 진행 중이라면? 게임 진행 (리액트에게 렌더 요청 → 화면 변경)
     setSquares((prevSquares) => {
       const nextSquares = prevSquares.map((square, idx) => {
-        return idx === index ? currentPlayer : square;
+        return idx === index ? nextPlayer : square;
       });
 
       return nextSquares;
@@ -37,7 +37,7 @@ function Board(){
   // ====== ⚫️🛑⚪️ === 게임 파생된 상태 === ⚪️🛑⚫️ ======
 
   // 게임이 끝났나 ? 게임 끝났다고 사용자에게 알림 : 반환값에 따라 게임을 진행할지 말지 결정
-  // squares?, isPlayOneTurn?, gameIndex?, currentPlayer?
+  // squares?, isPlayOneTurn?, gameIndex?, nextPlayer?
   const winnerInfo = checkWinner(squares);
 
   
@@ -51,17 +51,25 @@ function Board(){
   const isPlayerOneTurn = gameIndex % PLAYER_COUNT === 0 ; // true
 
   // 첫번째 플레이어의 턴이라면? PLAYER.ONE : 아니면 PLAYER.TWO
-  const currentPlayer = isPlayerOneTurn ? PLAYER.ONE : PLAYER.TWO; // '🍄'
+  const nextPlayer = isPlayerOneTurn ? PLAYER.ONE : PLAYER.TWO; // '🍄'
 
-  
+  // 게임 상황 체크! (비긴 경우) : 모든 게임판의 말이 채워지고, 승자가 없을 경우
+  const isDraw = !winnerInfo && squares.every(Boolean);
+
+
   return(
     <div className={S.component}>
       <h2>Who&apos;s the next winner?</h2>
-      <Status />
+      <Status
+        winner={winnerInfo?.winner}
+        nextPlayer={nextPlayer}
+        isDraw={isDraw}
+      />
       <Squares 
         squares={squares}
         winnerInfo={winnerInfo}
         onPlay={handlePlayGame}
+        isDraw={isDraw}
       />
     </div>
   )

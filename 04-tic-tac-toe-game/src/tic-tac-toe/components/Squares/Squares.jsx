@@ -1,14 +1,12 @@
-import { PLAYER_LIST, WINNERS_COLOR} from '@/tic-tac-toe/constants';
+import { WINNERS_COLOR} from '@/tic-tac-toe/constants';
 import Square from '../Square/Square';
 import S from './Squares.module.css';
-import { oneOf, arrayOf, shape, number, func } from 'prop-types';
+import { func } from 'prop-types';
+import { oneOfPlayerListType, WinnerInfoType } from '@/tic-tac-toe/types/type.d';
 
-const OneOfPlayerType = oneOf(PLAYER_LIST);
-const oneOfPlayerListType = arrayOf(OneOfPlayerType);
-const WinnerInfoType = shape({
-  winner:OneOfPlayerType,
-  condition: arrayOf(number),
-});
+
+
+
 
 Squares.propTypes = {
   squares: oneOfPlayerListType.isRequired,
