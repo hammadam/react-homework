@@ -26,6 +26,10 @@ button{
   line-height:1;
 }
 
+button:hover:not(:disabled){
+  opacity:0.9;
+}
+
 button:disabled{
   cursor:not-allowed;
 }
