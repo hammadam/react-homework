@@ -16,6 +16,15 @@ function Squares() {
   // 게임을 진행하는 함수
   
   const handlePlayGame = (index) => () => {
+    // 게임을 계속 진행하려할 때
+    // 1. 이미 게임이 종료된 경우
+    if (winnerInfo){
+      alert('게임이 종료되었습니다! \n다시 게임을 시작하려면 [게임 시작] 버튼을 눌러주세요 ')
+      return;
+    }
+
+    // 2. 아직 게임이 진행중인 경우
+
     // 아직 진행 중이라면? 게임 진행 (리액트에게 렌더 요청 → 화면 변경)
     setSquares((prevSquares) => {
       const nextSquares = prevSquares.map((square, idx) => {
@@ -31,7 +40,7 @@ function Squares() {
   // 게임이 끝났나 ? 게임 끝났다고 사용자에게 알림 : 반환값에 따라 게임을 진행할지 말지 결정
   // squares?, isPlayOneTurn?, gameIndex?, currentPlayer?
   const winnerInfo = checkWinner(squares);
-  console.log('승자는?',winnerInfo);
+
   
     
 
